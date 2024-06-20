@@ -20,14 +20,14 @@ void main() {
 			if (!is_PQ_empty()) process_next_job();
 		}
 		else {
-			printf(" ¾ÆÁ÷ Jop <%d>À» ÇÁ¸°Æ®ÇÏ°í ÀÖ½À´Ï´Ù ...³²Àº ½Ã°£ : %d \n", current_job_id, remaining_time);
+			printf(" ì•„ì§ Jop <%d>ì„ í”„ë¦°íŠ¸í•˜ê³  ìˆìŠµë‹ˆë‹¤ ...ë‚¨ì€ ì‹œê°„ : %d \n", current_job_id, remaining_time);
 			--remaining_time;
 		}
 		PQ_show();
 		++current_time;
 	}
-	printf("\n¿Ï·áµÈ ÇÁ¸°Æ® job = %d °³ \n", num_printed_jobs);
-	printf("Æò±Õ Áö¿¬ ½Ã°£    = %f ´ÜÀ§½Ã°£ \n\n", (double)total_wait_time / num_printed_jobs);
+	printf("\nì™„ë£Œëœ í”„ë¦°íŠ¸ job = %d ê°œ \n", num_printed_jobs);
+	printf("í‰ê·  ì§€ì—° ì‹œê°„    = %f ë‹¨ìœ„ì‹œê°„ \n\n", (double)total_wait_time / num_printed_jobs);
 }
 
 void insert_job(int id, int arrival_time, int duration) {
@@ -39,7 +39,7 @@ void insert_job(int id, int arrival_time, int duration) {
 	p.duration = duration;
 
 	insert_PQ(p);
-	printf(" »õ jop <%d>ÀÌ µé¾î ¿Ô½À´Ï´Ù. key(Ãâ·Â ½Ã°£) = %d ÀÔ´Ï´Ù. \n", id, duration);
+	printf(" ìƒˆ jop <%d>ì´ ë“¤ì–´ ì™”ìŠµë‹ˆë‹¤. key(ì¶œë ¥ ì‹œê°„) = %d ì…ë‹ˆë‹¤. \n", id, duration);
 
 }
 void process_next_job() {
@@ -50,7 +50,7 @@ void process_next_job() {
 	total_wait_time += current_time - p.arrival_time;
 	++num_printed_jobs;
 
-	printf(" ÇÁ¸°Æ®¸¦ ½ÃÀÛÇÕ´Ï´Ù - jop <%d>... \n", current_job_id);
+	printf(" í”„ë¦°íŠ¸ë¥¼ ì‹œì‘í•©ë‹ˆë‹¤ - jop <%d>... \n", current_job_id);
 
 }
 boolean is_job_arrived() {
@@ -98,7 +98,7 @@ Element delete_PQ() {
 	return min;
 }
 void PQ_show() {
-	printf("ÇöÀç ÇÁ¸°Æ® Å¥<key, id> : [ ");
+	printf("í˜„ì¬ í”„ë¦°íŠ¸ í<key, id> : [ ");
 	for (int i = 1; i <= PQ_size; i++) {
 		printf("<%d %d> ", PQ[i].key, PQ[i].id);
 	}
