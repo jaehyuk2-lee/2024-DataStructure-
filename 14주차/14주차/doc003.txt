@@ -1,0 +1,2 @@
+Data structure is an organization of information, usually in memory, for better algorithm efficiency, such as queue, stack, linked list, heap, dictionary, and tree, or conceptual unity, such as the name and address of a person. 
+A data structure may include redundant information, such as length of the list or number of nodes in a subtree. 
